@@ -6,7 +6,7 @@
 /*   By: kwolee <kwolee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 18:57:45 by kwolee            #+#    #+#             */
-/*   Updated: 2022/01/25 20:13:40 by kwolee           ###   ########seoul.kr  */
+/*   Updated: 2022/01/27 00:55:14 by kwolee           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ char	**ft_split(char const *s, char c)
 	char	**ans;
 
 	ans = (char **)malloc(sizeof(char *) * (count_word(s, c) + 1));
-	if (ans == NULL)
+	if (!ans)
 		return (NULL);
 	split_each(s, c, ans);
 	return (ans);

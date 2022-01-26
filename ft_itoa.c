@@ -6,7 +6,7 @@
 /*   By: kwolee <kwolee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:03:00 by kwolee            #+#    #+#             */
-/*   Updated: 2022/01/25 21:05:36 by kwolee           ###   ########seoul.kr  */
+/*   Updated: 2022/01/27 00:51:32 by kwolee           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ char	*ft_itoa(int n)
 	if (n == 0)
 		return (return_zero());
 	len = int_len(n);
-	a = malloc(sizeof(char) * len + 1);
-	a[len--] = '\0';
+	a = (char *)malloc(sizeof(char) * len + 1);
 	if (!a)
 		return (NULL);
+	a[len--] = '\0';
 	if (n < 0)
 	{
 		a[0] = '-';
