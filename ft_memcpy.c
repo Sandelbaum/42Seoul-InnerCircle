@@ -6,7 +6,7 @@
 /*   By: kwolee <kwolee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 18:07:42 by kwolee            #+#    #+#             */
-/*   Updated: 2022/01/25 20:21:24 by kwolee           ###   ########seoul.kr  */
+/*   Updated: 2022/01/28 18:00:39 by kwolee           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t			i;
-	unsigned char	*dest;
-	unsigned char	*source;
+	size_t				i;
+	unsigned char		*dest;
+	const unsigned char	*source;
 
 	if (dst == NULL && src == NULL)
 		return (NULL);

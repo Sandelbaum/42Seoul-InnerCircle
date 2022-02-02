@@ -6,7 +6,7 @@
 /*   By: kwolee <kwolee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 23:33:51 by kwolee            #+#    #+#             */
-/*   Updated: 2022/01/25 20:17:25 by kwolee           ###   ########seoul.kr  */
+/*   Updated: 2022/01/28 18:00:55 by kwolee           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	*str;
-	unsigned char	ch;
+	const unsigned char	*str;
+	unsigned char		ch;
 
-	str = (unsigned char *)s;
+	str = (const unsigned char *)s;
 	ch = c;
 	while (n)
 	{

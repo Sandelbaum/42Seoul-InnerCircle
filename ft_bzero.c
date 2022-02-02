@@ -6,7 +6,7 @@
 /*   By: kwolee <kwolee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 07:32:54 by kwolee            #+#    #+#             */
-/*   Updated: 2022/01/25 20:10:16 by kwolee           ###   ########seoul.kr  */
+/*   Updated: 2022/01/31 04:08:21 by kwolee           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_bzero(void *s, size_t n)
 	tmp = s;
 	while (n--)
 	{
-		*tmp = (char)0;
+		*tmp = (unsigned char)0;
 		tmp++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: kwolee <kwolee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 18:39:34 by kwolee            #+#    #+#             */
-/*   Updated: 2022/01/25 22:14:09 by kwolee           ###   ########seoul.kr  */
+/*   Updated: 2022/01/28 15:17:02 by kwolee           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char	*dest;
-	unsigned char	*source;
+	unsigned char		*dest;
+	const unsigned char	*source;
 
 	dest = (unsigned char *)dst;
 	source = (unsigned char *)src;
