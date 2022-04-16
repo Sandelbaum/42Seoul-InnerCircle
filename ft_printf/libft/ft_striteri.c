@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwolee <kwolee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/03 06:52:02 by kwolee            #+#    #+#             */
-/*   Updated: 2022/01/25 20:35:21 by kwolee           ###   ########seoul.kr  */
+/*   Created: 2022/01/25 18:37:34 by kwolee            #+#    #+#             */
+/*   Updated: 2022/01/25 20:14:08 by kwolee           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	unsigned char	ch;
+	unsigned int	i;
 
-	ch = c;
-	if (ch >= 0 && ch <= 127)
-		return (1);
-	return (0);
+	i = 0;
+	while (s[i])
+	{
+		f(i, s + i);
+		i++;
+	}
 }
