@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwolee <kwolee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 20:09:44 by kwolee            #+#    #+#             */
-/*   Updated: 2022/06/21 20:53:49 by kwolee           ###   ########seoul.kr  */
+/*   Created: 2022/01/17 18:43:41 by kwolee            #+#    #+#             */
+/*   Updated: 2022/01/25 20:12:20 by kwolee           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	s_len;
-	char	*substr;
+	const unsigned char	*str1;
+	const unsigned char	*str2;
 
-	s_len = ft_strlen(s);
-	if (s_len <= start || len == 0 || s_len == 0)
-		return ((char *)ft_calloc(1, 1));
-	if (len > s_len - start)
-		len = s_len - start;
-	substr = (char *)malloc(sizeof(char) * (len + 1));
-	if (!substr)
-		return (NULL);
-	s_len = ft_strlen(s);
-	ft_strlcpy(substr, s + start, len + 1);
-	return (substr);
+	str1 = s1;
+	str2 = s2;
+	while (n)
+	{
+		if (*str1 != *str2)
+			return (*str1 - *str2);
+		n--;
+		str1++;
+		str2++;
+	}
+	return (0);
 }

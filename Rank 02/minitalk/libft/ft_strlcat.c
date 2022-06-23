@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwolee <kwolee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 20:09:44 by kwolee            #+#    #+#             */
-/*   Updated: 2022/06/21 20:53:49 by kwolee           ###   ########seoul.kr  */
+/*   Created: 2021/10/12 15:21:43 by kwolee            #+#    #+#             */
+/*   Updated: 2022/01/25 20:14:22 by kwolee           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	s_len;
-	char	*substr;
+	size_t	dst_len;
+	size_t	src_i;
 
-	s_len = ft_strlen(s);
-	if (s_len <= start || len == 0 || s_len == 0)
-		return ((char *)ft_calloc(1, 1));
-	if (len > s_len - start)
-		len = s_len - start;
-	substr = (char *)malloc(sizeof(char) * (len + 1));
-	if (!substr)
-		return (NULL);
-	s_len = ft_strlen(s);
-	ft_strlcpy(substr, s + start, len + 1);
-	return (substr);
+	dst_len = 0;
+	src_i = 0;
+	while (dst[dst_len] && dst_len < dstsize)
+		dst_len++;
+	while (src[src_i] && (dst_len + src_i + 1) < dstsize)
+	{
+		dst[dst_len + src_i] = src[src_i];
+		src_i++;
+	}
+	if (dst_len < dstsize)
+		dst[dst_len + src_i] = '\0';
+	return (dst_len + ft_strlen(src));
 }

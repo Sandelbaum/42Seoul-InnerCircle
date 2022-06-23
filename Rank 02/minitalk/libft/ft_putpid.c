@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putpid.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwolee <kwolee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 20:09:44 by kwolee            #+#    #+#             */
-/*   Updated: 2022/06/21 20:53:49 by kwolee           ###   ########seoul.kr  */
+/*   Created: 2022/06/21 18:10:51 by kwolee            #+#    #+#             */
+/*   Updated: 2022/06/22 17:18:08 by kwolee           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_putpid(int pid, int flag)
 {
-	size_t	s_len;
-	char	*substr;
+	char	*pid_str;
+	int		i;
 
-	s_len = ft_strlen(s);
-	if (s_len <= start || len == 0 || s_len == 0)
-		return ((char *)ft_calloc(1, 1));
-	if (len > s_len - start)
-		len = s_len - start;
-	substr = (char *)malloc(sizeof(char) * (len + 1));
-	if (!substr)
-		return (NULL);
-	s_len = ft_strlen(s);
-	ft_strlcpy(substr, s + start, len + 1);
-	return (substr);
+	i = 0;
+	pid_str = ft_itoa(pid);
+	if (!pid_str)
+		exit(1);
+	if (flag == 1)
+		write(1, "client pid: ", 12);
+	else if (flag == 2)
+		write(1, "server pid: ", 12);
+	while (pid_str[i])
+	{
+		write(1, &pid_str[i], 1);
+		i++;
+	}
+	free(pid_str);
+	pid_str = NULL;
+	write(1, "\n", 1);
 }
