@@ -6,7 +6,7 @@
 /*   By: kwolee <kwolee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 20:09:44 by kwolee            #+#    #+#             */
-/*   Updated: 2022/01/25 21:37:33 by kwolee           ###   ########seoul.kr  */
+/*   Updated: 2022/06/23 21:49:54 by kwolee           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
 	size_t	s_len;
 	char	*substr;
 
@@ -26,7 +25,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr = (char *)malloc(sizeof(char) * (len + 1));
 	if (!substr)
 		return (NULL);
-	i = 0;
 	s_len = ft_strlen(s);
 	ft_strlcpy(substr, s + start, len + 1);
 	return (substr);
