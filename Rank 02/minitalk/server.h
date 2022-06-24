@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server_bonus.h                                     :+:      :+:    :+:   */
+/*   server.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwolee <kwolee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/23 21:25:05 by kwolee            #+#    #+#             */
-/*   Updated: 2022/06/23 21:41:46 by kwolee           ###   ########seoul.kr  */
+/*   Created: 2022/06/21 18:02:17 by kwolee            #+#    #+#             */
+/*   Updated: 2022/06/24 14:15:33 by kwolee           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERVER_BONUS_H
-# define SERVER_BONUS_H
+#ifndef SERVER_H
+# define SERVER_H
 
 # include <signal.h>
-# include "../libft/libft.h"
+# include "./libft/libft.h"
 
 typedef struct s_server
 {

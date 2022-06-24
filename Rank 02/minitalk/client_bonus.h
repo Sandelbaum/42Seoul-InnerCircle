@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.h                                           :+:      :+:    :+:   */
+/*   client_bonus.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwolee <kwolee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 15:21:38 by kwolee            #+#    #+#             */
-/*   Updated: 2022/06/23 15:21:03 by kwolee           ###   ########seoul.kr  */
+/*   Created: 2022/06/23 21:24:03 by kwolee            #+#    #+#             */
+/*   Updated: 2022/06/24 14:15:17 by kwolee           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLIENT_H
-# define CLIENT_H
+#ifndef CLIENT_BONUS_H
+# define CLIENT_BONUS_H
 
 # include <signal.h>
-# include "../libft/libft.h"
+# include "./libft/libft.h"
 
 typedef struct s_client
 {

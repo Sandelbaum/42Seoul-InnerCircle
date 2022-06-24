@@ -6,7 +6,7 @@
 /*   By: kwolee <kwolee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 15:19:11 by kwolee            #+#    #+#             */
-/*   Updated: 2022/06/23 15:23:10 by kwolee           ###   ########seoul.kr  */
+/*   Updated: 2022/06/24 14:37:35 by kwolee           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,18 @@ t_client	g_client;
 
 static void	verify_input(int argc, char **argv)
 {
+	int	i;
+	int	l;
+	
 	if (argc != 3)
-		ft_puterr("Error: wrong usage.\n");
+		ft_puterr("Usage: ./client [pid_server] [message]\n");
 	if (!(argv[2]))
 		ft_puterr("Error: invalid message.\n");
 	g_client.pid_server = (pid_t)ft_atoi(argv[1]);
-	if (g_client.pid_server <= 100 || g_client.pid_server > 100000)
+	while (ft_isdigit(argv[1][i]))
+		i++;
+	l = ft_strlen(argv[1]);
+	if (g_client.pid_server <= 100 || g_client.pid_server > 100000 || i != l)
 		ft_puterr("Error: invalid server pid.\n");
 	g_client.len = ft_strlen(argv[2]);
 	if (g_client.len <= 0)
